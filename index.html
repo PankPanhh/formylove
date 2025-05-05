@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư Tình Lãng Mạn</title>
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.1.0/dist/fireworks.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    #fireworks {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        pointer-events: none;
+    }
+</style>
+
+<body>
+    <div id="fireworks"></div>
+    <div class="container">
+        <h1>Nhập thông tin chính xác nhá</h1>
+        <form id="loveForm">
+            <label for="fullName">Họ và tên:</label>
+            <input type="text" id="fullName" name="fullName" required>
+            
+            <label for="phone">Số điện thoại:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="dob">Ngày tháng năm sinh:</label>
+            <input type="date" id="dob" name="dob" required>
+            
+            <label for="address">Địa chỉ:</label>
+            <input type="text" id="address" name="address" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="loverName">Người yêu bạn tên là gì? (Biệt danh)</label>
+            <input type="text" id="loverName" name="loverName" required>
+            
+            <button type="button" onclick="submitForm()">Gửi Tâm Thư</button>
+        </form>
+        <div id="message"></div>
+    </div>
+    <div id="errorOverlay" class="error-overlay"></div>
+    <div id="letterOverlay" class="letter-overlay">
+        <div class="letter-content">
+            <h2>Tâm Thư Gửi Đến Người Yêu Của Em</h2>
+            <div id="letterText"></div>
+            <div id="congratsMessage" style="display: none; position: relative; z-index: 2;">
+                <p>💖 Chúc mừng bạn đã có 1 cục dàng siêu cấp đáng yêu nhất trần đời này! 💖</p>
+                <button onclick="closeLetter()">Đóng</button>
+            </div>                     
+            <div class="button-group">
+                <button class="accept" onclick="acceptLetter()">Đồng ý</button>
+                <button class="decline" onclick="declineLetter()">Không</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
